@@ -1,15 +1,14 @@
-
-
 /*global chrome*/
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
-import TrafficContainer from "./components/TrafficContainer";
 import { getCurrentTab } from "./common/Utils";
 import axios from 'axios'
 import Nav from './components/Nav';
 
-
+import { Button, DatePicker, version } from "antd";
+import "antd/dist/antd.css";
+import ArticleRender from './components/ArticleRender';
 
 
 class App extends Component {
@@ -28,61 +27,33 @@ async componentDidMount (){
       console.log(this.state.data)
 
     })
-
-
 }
  
   render() {
     return (
-      <Router>
-        <Nav
-          <div className="flex-container">
-            {
-              this.state.data.map(word => { 
-                return(
-                 <ul >
-                   <li className="word"> {word.word} </li> 
-                   <li className='translatedWord'> {word.translatedWord}</li>
-                 </ul> 
-                )
-              })
-            }
-          </div>
-
-
-      </Router>
-    );
+      <div className="App">
+        <Nav />
+        <ArticleRender/>
+      </div>
+    )
   }
 }
 
 export default App;
+      // <Router>
+      //   <Nav />
+      //     <div className="flex-container">
+      //       {
+      //         this.state.data.map(word => { 
+      //           return (
+      //               <ul className='word-ul'>
+      //                 <li className="word"> {word.word} </li> 
+      //                 <li className='translatedWord'> {word.translatedWord}</li>
+      //               </ul> 
+      //           )
+      //         })
+      //       }
+      //     </div>
 
 
-
-
-
-// {
-
-
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-// // import { Parallax, Background } from 'react-parallax';
-// // import MyComponent from './components/parallax'
-
-// // import { observer } from 'mobx-react'
-
-
-// // @observe r
-// function App() {
-//   console.log("IM WORKING")
-//   return (
-//     <div className="App">
-//       HELLO WORLD
-//     </div>
-//   );
-// }
-
-// export default App;
-// }
-
+      // </Router>

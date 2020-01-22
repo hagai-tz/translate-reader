@@ -11,7 +11,7 @@ body{
   align-content: flex-start;
 }
 
-ul {
+.word-ul {
   list-style-type: none;
   padding: 0;
   display: flex;
@@ -45,3 +45,61 @@ ul {
   height: 14px;
 
 }
+
+
+/* Side Bar CSS */
+.nav-ul{
+  /* border: black dotted 2px; */
+  list-style-type: none;
+  padding: 0;
+  margin: 0; 
+  background: lightgray;
+  
+  display: flex;
+  flex-direction: column;
+  /* align-content: space-around; */
+  justify-content:space-between;
+  width: 60px;
+  height: 100vh;
+  
+  
+}
+
+.nav-ul-top {
+  padding: 0;
+  margin: 0; 
+  
+  display: flex;
+  flex-direction: column;
+  justify-content:start;
+  width: 60px;
+  height: 100vh;
+}
+
+.nav-ul-bottom {
+  padding: 0;
+  margin: 0; 
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content:flex-end; */
+  width: 60px;
+  height: 280px;
+}
+
+.slider {
+  align-self: center;
+  height: 10px;
+  
+}
+
+.hard{
+  align-self: center;
+}
+
+.easy{
+  align-self: center;
+  height: 150px;
+}
+
+/* Article Content CSS */
