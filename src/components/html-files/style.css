@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap ;
+    align-items:flex-start;
+    border: 2px dotted black;
+    height: 100vh;
+    align-content: flex-start;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 0.5%; 
+    
+}
+
+.word {
+    order: 0;
+    /* border: 1px dotted red; */
+    font-size: 18px;
+}
+
+.translatedWord{
+    order: 1;
+    /* border: 1px dotted blue; */
+    color:#676161;
+    font-size: 11px;
+
+}
+
+
+.translatedWordTransperent{
+    order: 1;
+    /* border: 1px dotted blue; */
+    color:white;
+    font-size: 11px;
+    display: inline-block;
+    height: 14px;
+
+}
