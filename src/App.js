@@ -35,7 +35,7 @@ async componentDidMount (){
     return (
       <div id='interface-container'>
         <Nav/>
-        <ArticleTitle/>
+        <ArticleTitle data={this.state.data}/>
         <ArticleContent data={this.state.data}/>
 
       </div>

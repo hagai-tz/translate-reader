@@ -6,16 +6,16 @@ class ArticleContent extends Component {
         return (
 
             <div id='article-content'>
-                {this.props.data.map(word => { 
-                return (
+                {this.props.data.map(word => {
+                    return (
                         <span className='word-ul'>
-                            <span className="word"> {word.word} </span> 
+                            <span className="word"> {word.word} </span>
                             <span className='translatedWord'> {word.translatedWord}</span>
-                        </span> 
-                )
-            })
-        }
-        </div>
+                        </span>
+                    )
+                })
+                }
+            </div>
         )
     }
 }

@@ -22,6 +22,7 @@ router.get('/', async function(req, res){
       console.log(dom)
       //use the readability library to parse the DOM document into a JSON free from all the clutter.
       const article = new read.Readability(dom.window.document).parse()
+      console.log(article)
       let fullArticle = _.words(article.textContent)
       fullArticle = fullArticle.slice(284)
       console.log(fullArticle)
@@ -66,6 +67,8 @@ router.get('/', async function(req, res){
               almostFinalArray.push(wordObj)
               // console.log(wordObj)
             }
+            // console.log(fullArticle)
+            almostFinalArray.push(article.title)
             console.log(almostFinalArray)
             res.send(almostFinalArray)
             

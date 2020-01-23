@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 
 class ArticleTitle extends Component {
     render() {
+        console.log(this.props.data)
         return (
-            // <div>
-                <h1 className='article-title'>This is my Article Title</h1>
-            // </div>
+                <h1 className='article-title'>{this.props.data[this.props.data.length-1]}</h1>
         );
     }
 }
