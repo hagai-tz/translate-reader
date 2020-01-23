@@ -7,7 +7,7 @@ class Nav extends Component {
           
         return (
             
-            <ul className='nav-ul'>
+            <ul id='nav-ul'>
                     <ul className='nav-ul-top'>
                         <Icon type="font-colors" style={{ fontSize: '45px', padding:'5px' }} />
                         <Icon type="line" />

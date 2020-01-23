@@ -5,10 +5,12 @@ import './App.css';
 import { getCurrentTab } from "./common/Utils";
 import axios from 'axios'
 import Nav from './components/Nav';
-
-import { Button, DatePicker, version } from "antd";
-import "antd/dist/antd.css";
 import ArticleRender from './components/ArticleRender';
+
+import { Button, DatePicker, version, Skeleton } from "antd";
+import "antd/dist/antd.css";
+import ArticleContent from './components/ArticleContent';
+import ArticleTitle from './components/ArticleTitle';
 
 
 class App extends Component {
@@ -31,15 +33,88 @@ async componentDidMount (){
  
   render() {
     return (
-      <div className="App">
-        <Nav />
-        <ArticleRender/>
+      <div id='interface-container'>
+        <Nav/>
+        <ArticleTitle/>
+        <ArticleContent data={this.state.data}/>
+
       </div>
+      
     )
   }
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+// <div className='App2'>
+// {
+//       this.state.data.map(word => { 
+//         return (
+          
+//                 <div className='word-ul'>
+//                     <span className="word"> {word.word} </span> 
+//                     <span className='translatedWord'> {word.translatedWord}</span>
+//                 </div> 
+
+//         )
+//       })
+//     }
+
+// </div>
+
+// <div className="App">
+
+// <div className='i1'>
+//   <Nav/>
+// </div>
+
+// <div className='i2'>
+//   <div className='space1'></div>
+//   <div className='article-content-container'>
+//     {/* <ArticleRender/> */}
+//     <ArticleTitle/>
+//     <ArticleContent data={this.state.data}/>
+
+
+
+//   </div>
+//   <div className='space1'></div>
+// </div>
+
+
+// </div>
+
+
+
+
+
+
+
+
+// <div className='i1'>
+// <Nav />
+// </div>
+
+// <div className='i2'>
+//   { <div className='space1'></div>
+//   <div className='article-container'>
+//     <ArticleRender />
+//   </div>
+//   <div className='space2'></div> }
+// </div>
+
+
       // <Router>
       //   <Nav />
       //     <div className="flex-container">
