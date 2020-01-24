@@ -15,16 +15,21 @@
     "48": "images/Frantz48.png",
     "128": "images/Frantz128.png"
   },
-  "background": {
-    "scripts": ["app/background.js"]
-},
 
+  "background": {
+    "scripts": ["app/background.js"],
+    "default_popup": "index.html",
+    "persistent": false
+},
   
   "content_security_policy": "script-src 'self' 'sha256-cMkWF/tjFmlTh6cujm890zBIMjIzocNPU9J6m+Gue/g='; object-src 'self'",
   
   "permissions": [
-    "webRequest",
+    
     "*://*/*",
-    "tabs"
+    "tabs",
+    "activeTab",
+    "storage",
+    "declarativeContent"
   ]
 }

@@ -16,15 +16,17 @@ router.get('/', async function(req, res){
         //RIPPING THE ARTICLE
 
       //gets the HTML from the URL
-      let webData = await request('https://blog.ycombinator.com/before-you-grow/')
+      let webData = await request('https://www.haaretz.co.il/news/elections/.premium.highlight-1.8440077')
+      // let webData = await request('https://medium.com/javascript-in-plain-english/https-medium-com-javascript-in-plain-english-how-to-build-a-simple-chrome-extension-in-vanilla-javascript-e52b2994aeeb')
       //turn the HTML into DOM document
       const dom = new JSDOM(webData);
       console.log(dom)
       //use the readability library to parse the DOM document into a JSON free from all the clutter.
       const article = new read.Readability(dom.window.document).parse()
-      console.log(article)
       let fullArticle = _.words(article.textContent)
-      fullArticle = fullArticle.slice(284)
+
+      // fullArticle = fullArticle.slice(284)
+      fullArticle = fullArticle.splice(0,128)
       console.log(fullArticle)
 
 
@@ -70,7 +72,7 @@ router.get('/', async function(req, res){
             // console.log(fullArticle)
             almostFinalArray.push(article.title)
             console.log(almostFinalArray)
-            res.send(almostFinalArray)
+            // res.send(almostFinalArray)
             
             // let finalArray = almostFinalArray.map(word => {
             //     return (`<ul id=${word.index}> <li className="word"> ${word.word} </li> <li className='translatedWord'> ${word.translatedWord}</li> </ul>`)

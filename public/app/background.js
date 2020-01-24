@@ -1,20 +1,10 @@
-https = require('https');
-r = require('readability-node');
-jsdom = require('jsdom').jsdom;
+// chrome.runtime.onMessage.addListener(function(res, sender, sendResponse){
+//     console.log(sender)
+//   })
 
-let uri = "https://adambard.com/blog/the-web-is-a-mature-platform/";
-https.get(uri, function(res){
+  chrome.browserAction.onClicked.addListener(function(tab){
+        console.log(tab)
+        let newUrl = "https://www.haaretz.co.il/"
+    chrome.tabs.create({url: newUrl });
 
-    let src = '';
-    res.on('data', function(d){ src += d; });
-    res.on('end', function(){
-    let doc = src
-    console.log(doc)
-        // let doc = jsdom(src, {features: {
-        //     FetchExternalResources: false,
-        //     ProcessExternalResources: false
-        // }});
-        let article = new r.Readability(doc).parse();
-        console.log(article.title, "\n\n", article.content);
-    });
-});
+  })
