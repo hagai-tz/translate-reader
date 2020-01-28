@@ -35,7 +35,7 @@ require('dotenv').config()
       ////GOOGLE TRANSLATE
 
       let promiseArray = []
-      
+
       for (let api = 0; api < paragraphsArray.length; api++) {
         //What to translate Object
         let text = {
@@ -68,19 +68,26 @@ require('dotenv').config()
           for (let j = 0; j < paragraphsArray[i].length; j++) {
 
             let wordObj = {}
-            // wordObj[fullArticle[i]] = translatedWords.data.translations[i].translatedText
             wordObj.word = paragraphsArray[i][j]
             wordObj.translatedWord = values[i].data.translations[j].translatedText
-            wordObj.index = i
+            wordObj.difficultyLevel = paragraphsArray[i][j].length
             almostFinalArray.push(wordObj)
-            // console.log(wordObj)
 
           }
           // console.log(translatedWords)
         }
 
-        console.log(almostFinalArray)
-        res.send(almostFinalArray)
+        let finalArray = {
+          content: almostFinalArray,
+          title: article.title,
+          author: article.byline,
+          link: url,
+          readingTime: Math.round(almostFinalArray.length/200)
+        }
+
+        console.log(finalArray.readingTime)
+        // console.log(article);
+        res.send(finalArray)
       })
 
       // res.send(promiseArray)
