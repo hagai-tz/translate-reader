@@ -10,6 +10,7 @@ require('dotenv').config()
 
     router.get('/url', async function (req, res) {
       let url = req.query.url
+      let lang = req.query.lang
 
       //RIPPING THE ARTICLE
       //gets the HTML from the URL
@@ -54,7 +55,7 @@ require('dotenv').config()
         let text = {
           "q": paragraphsArray[api],
           "source": "en",
-          "target": "he",
+          "target": lang,
           "model": "nmt",
           "format": "text"
         }
