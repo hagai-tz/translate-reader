@@ -28,8 +28,21 @@ require('dotenv').config()
       for (let a = 0; a < filtered.length; a++) {
         paragraphsArray.push(_.words(filtered[a]))
       }
-
+      //Deleting empty array elements from the main array
       paragraphsArray = paragraphsArray.filter(p => p.length)
+
+      let indexObject = []
+      for(let x=0; x<paragraphsArray.length; x++) {
+          
+        if(paragraphsArray[x].length>125){
+            let leftOverArray = paragraphsArray[x].splice(125)
+            paragraphsArray.splice(x + 1, 0, leftOverArray)
+            indexObject.push(x) 
+
+          }
+
+      }
+      console.log(indexObject)
       // res.send(paragraphsArray)
 
       ////GOOGLE TRANSLATE
@@ -87,7 +100,7 @@ require('dotenv').config()
 
         console.log(finalArray.readingTime)
         // console.log(article);
-        // res.send(finalArray)
+        res.send(finalArray)
       })
 
     })
