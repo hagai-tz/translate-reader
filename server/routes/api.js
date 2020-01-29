@@ -59,16 +59,20 @@ require('dotenv').config()
           "format": "text"
         }
 
-        //API call for the google translate server
-        let url = `https://translation.googleapis.com/language/translate/v2?key=${process.env.GOOGLE_TRANSLATE_API_KEY}`
-        let translatedWords = request.post({
-          url: url,
-          body: text,
-          json: true
-        })
-        promiseArray.push(translatedWords)
 
-      }
+          //API call for the google translate server
+          let url = `https://translation.googleapis.com/language/translate/v2?key=${process.env.GOOGLE_TRANSLATE_API_KEY}`
+          let translatedWords = request.post({
+            url: url,
+            body: text,
+            json: true
+          })
+          promiseArray.push(translatedWords)
+  
+        }
+        
+
+      
 
 
       Promise.all(promiseArray).then(function (values) {
@@ -100,6 +104,7 @@ require('dotenv').config()
       //  paragraphsArray[indexObject[a]] =  paragraphsArray[indexObject[a]].concat(paragraphsArray[indexObject[a+1]])
         console.log(paragraphsArray)
       }
+      // res.send(almostFinalArray)
 
         let finalArray = {
           content: almostFinalArray,
