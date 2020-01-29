@@ -23,7 +23,7 @@ require('dotenv').config()
 
       let filtered = article.textContent.split('\n')
       filtered = filtered.filter(Boolean);
-
+      
       let paragraphsArray = []
       for (let a = 0; a < filtered.length; a++) {
         paragraphsArray.push(_.words(filtered[a]))
@@ -69,8 +69,8 @@ require('dotenv').config()
 
             let wordObj = {}
             wordObj.word = paragraphsArray[i][j]
-            wordObj.translatedWord = values[i].data.translations[j].translatedText
-            wordObj.difficultyLevel = paragraphsArray[i][j].length
+            wordObj.difficultyLevel = (paragraphsArray[i][j].length/10)*100
+            wordObj.translatedWord = (paragraphsArray[i][j].length<3 ? null : (isNaN(paragraphsArray[i][j]) ? values[i].data.translations[j].translatedText : null ))
             almostFinalArray.push(wordObj)
 
           }
@@ -87,11 +87,8 @@ require('dotenv').config()
 
         console.log(finalArray.readingTime)
         // console.log(article);
-        res.send(finalArray)
+        // res.send(finalArray)
       })
-
-      // res.send(promiseArray)
-      // console.log(promiseArray)
 
     })
 
