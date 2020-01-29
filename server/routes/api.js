@@ -31,6 +31,7 @@ require('dotenv').config()
       //Deleting empty array elements from the main array
       paragraphsArray = paragraphsArray.filter(p => p.length)
 
+      //spliting arrays that are bigger than 125 charecthers      
       let indexObject = []
       for(let x=0; x<paragraphsArray.length; x++) {
           
@@ -38,10 +39,9 @@ require('dotenv').config()
             let leftOverArray = paragraphsArray[x].splice(125)
             paragraphsArray.splice(x + 1, 0, leftOverArray)
             indexObject.push(x) 
-
           }
-
       }
+
       console.log(indexObject)
       // res.send(paragraphsArray)
 
@@ -75,6 +75,9 @@ require('dotenv').config()
         console.log("this is values", values);
         // res.send(values)
 
+     
+
+
         // start building the words array
         let almostFinalArray = []
         for (let i = 0; i < paragraphsArray.length; i++) {
@@ -89,6 +92,14 @@ require('dotenv').config()
           }
           // console.log(translatedWords)
         }
+
+         //Reassembling the array after translation
+      for(let a=0; a<indexObject.length; a++){
+        let concatElement = paragraphsArray[indexObject[a]].concat(paragraphsArray[indexObject[a]+1])
+        paragraphsArray.splice(indexObject[a],1, concatElement)
+      //  paragraphsArray[indexObject[a]] =  paragraphsArray[indexObject[a]].concat(paragraphsArray[indexObject[a+1]])
+        console.log(paragraphsArray)
+      }
 
         let finalArray = {
           content: almostFinalArray,
