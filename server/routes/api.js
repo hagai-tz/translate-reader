@@ -21,6 +21,7 @@ require('dotenv').config()
 
       //use the readability library to parse the DOM document into a JSON free from all the clutter.
       const article = new read.Readability(dom.window.document).parse()
+      console.log(article)
 
       let filtered = article.textContent.split('\n')
       filtered = filtered.filter(Boolean);
@@ -112,10 +113,11 @@ require('dotenv').config()
           title: article.title,
           author: article.byline,
           link: url,
-          readingTime: Math.round(almostFinalArray.length/200)
+          readingTime: Math.round(almostFinalArray.length/200),
+          excerpt:article.excerpt
         }
 
-        console.log(finalArray.readingTime)
+        console.log(finalArray)
         // console.log(article);
         res.send(finalArray)
       })
