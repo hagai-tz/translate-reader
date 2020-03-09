@@ -3,7 +3,16 @@ const app = express();
 const path = require('path');
 const api = require('./routes/api')
 
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
+
 app.use(express.static(path.join(__dirname, '...', 'node_modules')));
+
+//MongoDB setup
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
+mongoose.connect("mongodb://localhost/paragraph-article-cacheDB", { useNewUrlParser: true, useUnifiedTopology: true  })
+
 
 
 app.use(function (req, res, next) {
