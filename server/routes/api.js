@@ -13,7 +13,7 @@ router.get('/url', async function (req, res) {
   let lang = req.query.lang;
 
   //Searching for Article in the DB
-  const isUserArticleCachedBoolean = await ArticleCache.find({ articleURLId: url }, function (err, articleData) {
+  const isUserArticleCachedBoolean = await ArticleCache.find({ articleURLId: url, targetLanguageTranslation: lang }, function (err, articleData) {
     if (err) {
       console.log('err: ', err);
       return;
@@ -136,13 +136,14 @@ router.get('/url', async function (req, res) {
       });
        finalArraySavedForDB.save();
 
-      console.log(finalArray);
+      console.log(finalArraySavedForDB);
+
       // console.log(article);
-      res.send(finalArray);
+      res.send(finalArraySavedForDB);
     });
 
   } else {
-    console.log("False")
+    console.log("False", isUserArticleCachedBoolean)
     res.send(isUserArticleCachedBoolean)
   }
 
