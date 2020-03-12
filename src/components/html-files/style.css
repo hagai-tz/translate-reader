@@ -1,0 +1,426 @@
+body{
+    margin: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap ;
+    align-items:flex-start;
+    border: 2px dotted black;
+    height: 100vh;
+    align-content: flex-start;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 0.5%; 
+    
+}
+
+.word {
+    order: 0;
+    /* border: 1px dotted red; */
+    font-size: 18px;
+}
+
+.translatedWord{
+    order: 1;
+    /* border: 1px dotted blue; */
+    color:#676161;
+    font-size: 11px;
+
+}
+
+
+.translatedWordTransperent{
+    order: 1;
+    /* border: 1px dotted blue; */
+    color:white;
+    font-size: 11px;
+    display: inline-block;
+    height: 14px;
+
+}
+
+
+
+/* body{
+  margin: 0;
+} */
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap ;
+    align-items:flex-start;
+    border: 2px dotted black;
+    height: 100vh;
+    align-content: flex-start;
+  }
+  
+  .word-ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 0.5%; 
+    
+  }
+  
+  .word {
+    order: 0;
+    /* border: 1px dotted red; */
+    font-size: 18px;
+  }
+  
+  .translatedWord{
+    order: 1;
+    /* border: 1px dotted blue; */
+    color:#676161;
+    font-size: 11px;
+  
+  }
+  
+  
+  .translatedWordTransperent{
+    order: 1;
+    /* border: 1px dotted blue; */
+    color:white;
+    font-size: 11px;
+    display: inline-block;
+    height: 14px;
+  
+  }
+  
+  
+  /* Side Bar CSS */
+  .nav-ul{
+    /* border: black dotted 2px; */
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+    background: lightgray;
+    
+    display: flex;
+    flex-direction: column;
+    /* align-content: space-around; */
+    justify-content:space-between;
+    width: 60px;
+    height: 100vh;
+    
+    
+  }
+  
+  .nav-ul-top {
+    padding: 0;
+    margin: 0; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    width: 60px;
+    height: 100vh;
+  }
+  
+  .nav-ul-bottom {
+    padding: 0;
+    margin: 0; 
+  
+    display: flex;
+    flex-direction: column;
+    /* justify-content:flex-end; */
+    width: 60px;
+    height: 280px;
+  }
+  
+  .slider {
+    align-self: center;
+    height: 10px;
+    
+  }
+  
+  .hard{
+    align-self: center;
+  }
+  
+  .easy{
+    align-self: center;
+    height: 150px;
+  }
+  
+  /* Article Content CSS */
+  
+  .content-container {
+    background: gray;
+  
+  }
+  
+  /* Grid Layout */
+  
+  .App {
+    display: flex;
+    background: skyblue;
+  
+  }
+  
+  /* 
+  .i1 {
+    background: slateblue;
+    min-width: 60px;
+  
+  }
+  
+  .i2 {
+    background:blue;
+    min-width: 220px;
+  
+  } */
+  
+  
+  .side-bar{
+    order: 0;
+    flex-grow:1;
+    flex-basis: content;
+    background: slateblue;
+    min-width: 60px;
+  }
+  
+  .space1{
+    order: 0;
+    flex-grow:1;
+    background: slateblue;
+    min-width: 200px;
+    max-width: 300px;
+  }
+  
+  .article-container{
+    order: 1;
+    flex-grow:3;
+    background: teal;
+    min-width: 500px;
+    max-width: 650px; 
+    
+  }
+  
+  
+  .space2{
+    order: 2;
+    flex-grow:1;
+    background: slateblue;
+    min-width: 200px;
+  }
+  
+  
+
+
+  #interface-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 8fr 4fr;
+    grid-template-rows: 1fr 7fr;
+   
+  }
+  
+  
+  body{
+    margin: 0;
+  }
+  
+  .App2{
+    display: flex;
+    flex-wrap: wrap;
+  
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap ;
+    align-items:flex-start;
+    border: 2px dotted black;
+    height: 100vh;
+    align-content: flex-start;
+  }
+  
+  .word-ul {
+    list-style-type: none;
+    padding: 2px 4px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 0.3%; 
+   
+    
+    
+  }
+  
+  .word {
+    order: 0;
+    /* border: 1px dotted red; */
+    font-size: 20px;
+  }
+  
+  .translatedWord{
+    order: 1;
+    /* border: 1px dotted blue; */
+    color:#676161;
+    font-size: 11px;
+  
+  }
+  
+  
+  .translatedWordTransperent{
+    order: 1;
+    /* border: 1px dotted blue; */
+    color:white;
+    font-size: 11px;
+    display: inline-block;
+    height: 14px;
+  
+  }
+  
+  
+  /* Side Bar CSS */
+  #nav-ul{
+    /* border: black dotted 2px; */
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+    background: lightgray;
+    
+    display: flex;
+    flex-direction: column;
+    /* align-content: space-around; */
+    justify-content:space-between;
+    width: 60px;
+    height: 100vh;
+  
+    grid-area: 1/ 1 / span 2/ span 1;
+    
+    
+  }
+  
+  .nav-ul-top {
+    padding: 0;
+    margin: 0; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    width: 60px;
+    height: 100vh;
+  }
+  
+  .nav-ul-bottom {
+    padding: 0;
+    margin: 0; 
+  
+    display: flex;
+    flex-direction: column;
+    /* justify-content:flex-end; */
+    width: 60px;
+    height: 280px;
+  }
+  
+  .slider {
+    align-self: center;
+    height: 10px;
+    
+  }
+  
+  .hard{
+    align-self: center;
+  }
+  
+  .easy{
+    align-self: center;
+    height: 150px;
+  }
+  
+  /* Article Content CSS */
+  
+  .content-container {
+    background: gray;
+    display: flex;
+    flex-direction: column;
+    align-items:stretch;
+    height: 100vh;
+    min-width: 400px;
+  
+    /* width: 100%; */
+  
+  }
+  .article-title{
+    background: lightgray;
+    width: inherit;
+    padding: 10px;
+    margin: auto;
+    height:auto ;
+    text-align: center;
+    font-size: 34px;
+    grid-area: 1/3;
+  
+  }
+  
+  #article-content {
+    /* background: yellowgreen; */
+    width: inherit;
+    /* border: dotted 3px red; */
+   padding: 0px 5px;
+    grid-area: 2/3;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    border: lightslategray 1px solid;
+  }
+  
+  /* Grid Layout */
+  
+  .App {
+    display: flex;
+    height: 100vh;
+    background: skyblue;
+    /* flex: 1 100%; */
+  
+  }
+  
+  
+  .i1 {
+    background: slateblue;
+    height: 100vh;
+    min-width: 60px;
+  
+  }
+  
+  .i2 {
+    background:lightgray;
+    height: 100vh;
+    width: 100%;
+  
+    display: flex;
+  flex-direction: row;
+  
+    justify-content: space-between;
+  
+  }
+  
+  .space1{
+   background: darkgray;
+   min-width: 200px;
+   /* max-width: 300px; */
+  }
+  
+  
+  
+  .article-content-container{
+    min-width: 650px;
+    max-width: 650px;
+    border: tomato 2px ;
+    /* display: flex; */
+  /* flex-direction: row; */
+  
+    /* max-width: 500px; */
+  }
